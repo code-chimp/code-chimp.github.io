@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://code-chimp.github.io/sitemap.xml
