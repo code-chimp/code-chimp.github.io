@@ -1,2 +1,3 @@
 # code-chimp.github.io
-Time to update my tired old Github page.
+
+Let's make a blog kids.
