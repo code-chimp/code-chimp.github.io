@@ -1,0 +1,44 @@
+.customLogoX {
+  margin: 0;
+}
+
+.customLogo {
+  background-color: #f0f8ff;
+  position: relative;
+  margin-left: -8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  object-fit: contain;
+  border-radius: 4%;
+}
+
+td {
+  vertical-align: middle!important
+}
+
+@media screen and (min-width: 0px) {
+  .customLogo {
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .customLogo {
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+    padding: 8px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .customLogo {
+    min-width: 100px;
+    width: 100px;
+    height: 100px;
+    padding: 8px;
+  }
+}
