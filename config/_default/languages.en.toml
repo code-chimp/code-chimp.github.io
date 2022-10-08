@@ -20,6 +20,7 @@ dateFormat = "2 January 2006"
     { github = "https://github.com/code-chimp" },
     { linkedin = "https://linkedin.com/in/tgoshinski" },
     { telegram = "https://t.me/code_chimp" },
+    { lightbulb = "https://www.udemy.com/user/timgoshinski/" },
     { email = "mailto:tim@code-chimp.com" },
   #   { link = "https://link-to-some-website.com/" },
   #   { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
