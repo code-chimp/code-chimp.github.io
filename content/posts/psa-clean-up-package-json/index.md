@@ -1,5 +1,6 @@
 ---
 title: "PSA: Cleaning Up package.json"
+description: Explaining a small set of modifications I make to achieve a more readable `package.json` file.
 date: 2022-10-07T21:22:28-05:00
 draft: false
 
@@ -12,7 +13,7 @@ tags:
 - NodeJS
 ---
 
-I have a small pet peeve, maybe it's just me, but I really dislike random chunks of configuration cluttering up my **package.json**
+I have a minor peeve, maybe it's just me, but I really dislike random chunks of configuration cluttering up my **package.json**
 file. Project generators offered by the likes of [Nest][nest] and [Create React App][cra] still leverage the classic pattern
 of embedding third party configuration values in the **package.json**, which makes it feel cluttered to me. Really I am
 just looking to see the dependencies, development dependencies, NPM scripts, and basic project metadata in that file.
@@ -218,7 +219,9 @@ module.exports = {
 };
 {{< /highlight >}}
 
-For me personally the expense of a few extra files in my project root to keep every more focused on its specific purpose
+So any time I find a new section of key-value pairs that I do not think belong in the **package.json** I consult the
+documentation to see if an option exists to move it out into a separate file. For me personally the minor expense of a
+few extra files in my project root for the benefit of having all of the configuration more focused into digestible bits
 is worth it.
 
 {{< figure src="project_tree.png" alt="project root" caption="a fairly average project root" >}}

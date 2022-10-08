@@ -44,16 +44,16 @@ enableCodeCopy = true
   invertPagination = false
   showReadingTime = true
   showTableOfContents = true
-  showTaxonomies = false
+  showTaxonomies = true
   showWordCount = true
   showSummary = true
   sharingLinks = [ "linkedin", "twitter", "facebook", "email"]
 
 [list]
   showBreadcrumbs = false
-  showSummary = false
+  showSummary = true
   showTableOfContents = false
-  showCards = false
+  showCards = true
   groupByYear = true
 
 [sitemap]

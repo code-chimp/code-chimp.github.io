@@ -2,7 +2,7 @@
 # Refer to the theme docs for more details about each of these parameters.
 # https://nunocoracao.github.io/blowfish/docs/getting-started/
 
-baseURL = "https://code-chimp.github.io"
+baseURL = "https://code-chimp.com"
 defaultContentLanguage = "en"
 
 enableRobotsTXT = true
@@ -12,7 +12,7 @@ summaryLength = 30
 buildDrafts = false
 buildFuture = false
 
-# googleAnalytics = "G-XXXXXXXXX"
+googleAnalytics = "G-MSLCX3JM5M"
 
 [sitemap]
   changefreq = 'daily'
