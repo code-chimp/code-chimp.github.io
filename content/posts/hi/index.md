@@ -20,6 +20,10 @@ a more searchable format than a bunch of random projects on one of my dev boxes.
 I always have a backlog of shiny new things that I am teaching myself and it has started to become a challenge when
 attempting to recall "what project did I put that cool piece of code in that did that thing I want to do now?".
 
+Where is the comments section? I will likely never add a comments section because frankly they are a real pain to police
+for spam, unproductive flame wars, and really inappropriate content among other things. If you have a question feel free
+to reach out to me directly via the contact information I have provided here.
+
 If you find anything of use in my random stuff - glad that I could be of service.
 
 Have a great day!
