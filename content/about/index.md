@@ -12,20 +12,20 @@ draft: false
 ## What I do
 
 I have been shipping code for well over two decades now, and I still really love my work.  Currently I am working as a
-front-end heavy full-stack developer - being a huge fan of the [React][react] framework and having experience with the
-[.NET ecosystem][dn] going all the way back to its release in 2002. I have entirely embraced [TypeScript][ts] for
-[React][react] and basically anything I would normally have write in JavaScript such as a [NodeJS][nodejs] middle tier
-code or even [personal experiments][rnx] with [React Native][rn]. Lately I have been focusing on automating my code
-quality through the use of good static analysis tools like [ESLint][esl] and [Prettier][pret] paired with an extensive
-test suite - usually developed with [Kent C. Dodd's][kcd] excellent [Testing Library][testl] enhancing the [Jest][jest]
-testing framework [(example)][mycrypto].
+front-end heavy full-stack developer - being a huge fan of the [React][react] framework and having decades worth of
+experience with the [.NET ecosystem][dn]. I have entirely embraced [TypeScript][ts] for anything I would normally have
+written in JavaScript - such as a React front-end, [NodeJS][nodejs] middle tier code, or even [personal experiments][rnx]
+with [React Native][rn]. Lately I have been focusing on automating my code quality through the use of good static
+analysis tools like [ESLint][esl] and [Prettier][pret] paired with an extensive test suite - usually leveraging
+[Kent C. Dodd's][kcd] excellent [Testing Library][testl] to enhance the [Jest][jest] testing framework
+[(example)][mycrypto].
 
 ## How I got here
 
 {{< figure src="my_bookshelf.jpg" alt="my bookshelf" caption="the books in the middle opened a new world for me" >}}
 
 I was bitten by the programming bug after seeing the Disney movie [Tron][tron] as a young teenager - afterwards
-ceaselessly bugging my parents until they gave in (a couple of years later) and purchased a top-of-the line Apple //c.
+ceaselessly bugging my parents until they gave in and purchased a top-of-the line Apple //c for me.
 That computer introduced me to the world of Apple Basic and 6502 Assembler and still sits in a corner of my office
 [(pic)]({{< ref "#my-apple-c" >}} "The original Apple //c").
 
