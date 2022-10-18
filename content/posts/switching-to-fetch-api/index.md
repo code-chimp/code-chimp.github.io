@@ -4,6 +4,9 @@ description: Eliminating a package dependency by switching from Axios to the Fet
 date: 2022-10-16T19:58:57-05:00
 draft: false
 
+categories:
+- Development
+
 tags:
 - TypeScript
 - Optimization

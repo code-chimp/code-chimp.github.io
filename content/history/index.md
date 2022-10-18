@@ -28,7 +28,7 @@ draft: false
       <td>Remote<br/> Austin, TX<br />USA</td>
     </tr>
     <tr>
-      <td><img class="customLogo medium-zoom-image" alt="Kiewit Corporation" src="kiewit_logo.png" /></td>td>
+      <td><img class="customLogo medium-zoom-image" alt="Kiewit Corporation" src="kiewit_logo.png" /></td>
       <td><a href="https://www.kiewit.com">Kiewit Corporation</a></td>
       <td>Sr. Software Engineer</td>
       <td>05/2019 - 06/2021</td>
