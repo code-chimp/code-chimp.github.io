@@ -14,14 +14,12 @@ tags:
 - UX
 ---
 
-## Motivation
-
-Having your application relay relevant, timely feedback to your user is critical - especially if it relies on a great
-deal of asynchronous interactions. Two of the standard ways of delivering feedback are through the use of [alerts][bsa]
-and [toast messages][bst]. To avoid a lot of boilerplate markup popping up all over the project I wanted to make it as
-simple for a developer as just dispatching an action such as `dispatch(errorAlert('your call cannot be completed as dialed');`
-and have the alert or toast appear on the screen. I am using [Bootstrap][bs] for this project but the same concept should
-translate to other frameworks such as [Ant Design][antd], [Material UI][mui], or [Foundation for Sites][zurb].
+Timely and relevant feedback from application events is critical to maintaining user engagement. Two standard ways of
+delivering immediate event feedback are through the use of [alerts][bsa] and [toast messages][bst]. To avoid a lot of
+boilerplate markup popping up all over the project I wanted to make it as simple as just dispatching an action such as
+"`dispatch(errorAlert('your call cannot be completed as dialed');`" and have the alert appear on the screen. I am using
+[Bootstrap][bs] for this project but the same concept should translate to other frameworks such as [Ant Design][antd],
+[Material UI][mui], or [Foundation for Sites][zurb].
 
 What follows is a short replay of how I implemented an asynchronous alerts pipeline in
 {{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/" title="my Redux template project" >}}, and
