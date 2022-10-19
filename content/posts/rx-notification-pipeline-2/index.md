@@ -14,19 +14,20 @@ tags:
 - UX
 ---
 
-[Alerts][bsa] tend to be for **sticky** messages that I want to ensure the user is forced to actively engage.
-[Toasts][bst], on the other hand, I like to use for quick, _something-happened_ messages - the information is there
-for the user to pay attention to or not as the message will disappear on its own in a few seconds.
+[Alerts][bsa] tend to be for **sticky** messages that I ensure the user is forced to actively engage and dismiss.
+[Toasts][bst], on the other hand, are used for quick, __*something-happened*__ style messages - the information is there
+for the user to pay attention to, or not, as the message will disappear on its own in a few seconds.
 
 ## MVP
 
-The process for showing toast messages is nearly identical to the alerts pipeline, so I am going to start of with a
+The process for showing toast messages is nearly identical to the alerts pipeline, so I am going to start off with a
 minimum-viable-product approach to verify the dispatch, show, and remove functionality.
 
 ### Interface
 
-Starting off with just some text to display, and a unique id for testing and cleanup. I chose **IToast*Message*** over
-simply **IToast** as I have run into a naming collision with another package before, so I chose to be ultra-specific.
+For this first pass I am just looking to display some text, and of course we will need a unique id for testing and
+state cleanup. I chose to name the interface **IToast*Message*** over simply **IToast** as I have previously run into a
+naming collision with another package, so in this instance I chose to be ultra-specific.
 
 file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@interfaces/IToastMessage.ts" title="/src/@interfaces/IToastMessage.ts" >}}*
 {{< highlight typescript >}}
@@ -40,7 +41,7 @@ export default IToastMessage;
 
 ### Slice
 
-Just display it, and remove it for now:
+We only need actions to display it, and remove it for now:
 
 file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/toasts.ts" title="/src/store/slices/toasts.ts" >}}*
 {{< highlight typescript >}}
@@ -108,8 +109,8 @@ export default AppToasts;
 
 ### Toast Component
 
-Here we come to the primary difference between Bootstrap's toasts and alerts - toasts are exclusively **opt-in** so you
-need to explicitly invoke the `show` method for the component. Again just the bare minimum for the toast itself:
+Here we come to the primary difference between Bootstrap's toasts and their alerts - toasts are exclusively **opt-in**
+so you need to explicitly invoke the `show` method for the component. Again just the bare minimum for the toast itself:
 
 file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppToasts/Toast/Toast.tsx" title="/src/components/app/AppToasts/Toast/Toast.tsx" >}}*
 {{< highlight typescript "hl_lines=2 23-26" >}}
@@ -164,7 +165,7 @@ const Toast: FC<IAppToastProps> = ({ toastMessage }) => {
 export default Toast;
 {{< /highlight >}}
 
-We'll tuck the container in next to the `AppAlerts` in the startup component:
+We'll tuck the container in beside the `AppAlerts` container in the startup component:
 
 file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/index.tsx" title="/src/index.tsx" >}}*
 {{< highlight typescript "hl_lines=7 17" >}}
@@ -287,13 +288,13 @@ has now been removed from the screen:
 
 ## Adding Polish
 
-I am going to type these like the the alerts, with Error, Info, Success, and Warning variants while leaving the
-header text and non-configurable unless a client requests it.
+I am going to type these similar to the the alerts, with Error, Info, Success, and Warning variants. I plan on leaving the
+header text non-configurable unless a client requests it.
 
 ### Typing
 
 Even though I am using identical values to `AlertTypes`, this component has the greatest likelihood to sprout more variants
-as time goes on, so I feel it best to give object its own separate typing:
+as time goes on, so I feel it best to give the ToastMessage its own separate typing:
 
 file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@enums/ToastTypes" title="/src/@enums/ToastTypes" >}}*
 {{< highlight typescript >}}
@@ -319,7 +320,7 @@ type ToastType = ToastTypes.Error
 export default ToastType;
 {{< /highlight >}}
 
-And add the new type to the interface:
+Adding the new type to the interface:
 
 file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@interfaces/IToastMessage.ts" title="/src/@interfaces/IToastMessage.ts" >}}*
 {{< highlight typescript "hl_lines=5" >}}
@@ -336,7 +337,7 @@ export default IToastMessage;
 
 ### Slice Changes
 
-Add actions for our typed toast messages:
+Add actions for our typed toast messages and create a helper method for preparing the payload:
 
 file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/toasts.ts" title="/src/store/slices/toasts.ts" >}}*
 {{< highlight typescript "hl_lines=4 9-14 26-57 61-67" >}}
@@ -638,9 +639,10 @@ The page may be ugly, but the toasts look good!
 
 ## Conclusion
 
-I am pretty happy with the results and teammebers on projects that I have added these pipelines to seem to like it.
-Unit tests will be in [the repository][van] if you would like some good code coverate to go with the sample code. As
-always feel free to drop me a line if you see anywhere that could use some improvement.
+I am pretty happy with the results and feel this is good enough for a project starter. Team members on projects that I
+have added these pipelines to seem to like it, and the designers were not completely horrified. Unit tests will be in
+[the repository][van] if you would like some good code coverage to go with the sample code. As always feel free to drop
+me a line if you see anywhere that could use some improvement.
 
 [van]: https://github.com/code-chimp/vanilla-redux-template 'My base template for new Redux projects'
 [bsa]: https://getbootstrap.com/docs/5.2/components/alerts/ 'Provide contextual feedback messages for typical user actions'
