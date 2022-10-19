@@ -1,7 +1,7 @@
 ---
 title: "Redux Powered Notification Pipeline Pt. 1: Alerts"
 description: Creating a Redux-driven notification pipeline part one - Alerts
-date: 2022-10-20T00:01:01-05:00
+date: 2022-10-19T00:01:01-05:00
 draft: false
 
 categories:
