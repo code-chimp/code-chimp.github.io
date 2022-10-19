@@ -14,7 +14,7 @@ tags:
 - UX
 ---
 
-[Alerts][bsa] tend to be for **sticky** messages that I ensure the user is forced to actively engage and dismiss.
+[Alerts][bsa] tend to be for **sticky** messages that I want to ensure the user must actively engage and dismiss.
 [Toasts][bst], on the other hand, are used for quick, __*something-happened*__ style messages - the information is there
 for the user to pay attention to, or not, as the message will disappear on its own in a few seconds.
 
