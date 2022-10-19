@@ -180,7 +180,8 @@ last 1 safari version
 {{< /highlight >}}
 
 Likewise [Nest][nest] tends to put [Jest][jest] configuration in the **package.json** while it can just as easily go
-into its own JavaScript file:
+into its own JavaScript file. **Note:** As far as I can tell [Create React App][cra] powered projects **will not**
+recognize Jest settings outside of the **package.json**, but here is a working example from one of my NodeJS projects:
 
 *jest.config.js*
 {{< highlight javascript >}}
@@ -220,9 +221,8 @@ module.exports = {
 {{< /highlight >}}
 
 So any time I find a new section of key-value pairs that I do not think belong in the **package.json** I consult the
-documentation to see if an option exists to move it out into a separate file. For me personally the minor expense of a
-few extra files in my project root for the benefit of having all of the configuration more focused into digestible bits
-is worth it.
+documentation to see if an option exists to move it out into a separate file. For me, personally, having my project
+configuration more focused into digestible chunks is worth the minor expense of afew extra files in my project root.
 
 {{< figure src="project_tree.png" alt="project root" caption="a fairly average project root" >}}
 
