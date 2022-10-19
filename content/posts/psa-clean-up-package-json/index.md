@@ -222,7 +222,7 @@ module.exports = {
 
 So any time I find a new section of key-value pairs that I do not think belong in the **package.json** I consult the
 documentation to see if an option exists to move it out into a separate file. For me, personally, having my project
-configuration more focused into digestible chunks is worth the minor expense of afew extra files in my project root.
+configuration more focused into digestible chunks is worth the minor expense of a few extra files in my project root.
 
 {{< figure src="project_tree.png" alt="project root" caption="a fairly average project root" >}}
 
