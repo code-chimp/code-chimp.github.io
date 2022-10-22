@@ -12,3 +12,14 @@ tags:
 - NodeJS
 ---
 
+Issues:
+
+- css modules
+  ```json lines
+  moduleNameMapper: {
+    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
+  },
+
+```
+- TypeScript + http 'Request' object = CRA eject = **react-app-polyfill** + jest.config:setupFiles
+- **import.meta.inv** bruhaha
