@@ -30,7 +30,8 @@
 ### Hugo template
 # Generated files by hugo
 /public/
-/resources/_gen/
+/resources/_gen/assets
+!/resources/_gen/images/
 
 # Executable may be added to repository
 hugo.exe
