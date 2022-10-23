@@ -40,19 +40,17 @@ file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/
 {{< highlight typescript "hl_lines=5 6" >}}
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import 'bootstrap';
 import './styles/global.scss';
-import App from './App';
 import store from './store';
+import routes from './routes';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <RouterProvider router={routes} />
     </Provider>
   </React.StrictMode>
 );
@@ -210,29 +208,26 @@ const Alert: FC<IAlertProps> = ({ alert }) => {
 export default Alert;
 {{< /highlight >}}
 
-Since we want this to be available from anywhere in the application I am going to put it next to our main `App` component.
+Since we want this to be available from anywhere in the application I am going to put it next to our main RouteProvider.
 
 file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/index.tsx" title="/src/index.tsx" >}}*
-{{< highlight typescript "hl_lines=15" >}}
-import React from 'react';
+{{< highlight typescript "hl_lines=13" >}}
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import 'bootstrap';
 import AppAlerts from './components/app/AppAlerts';
 import './styles/global.scss';
-import App from './App';
 import store from './store';
+import routes from './routes';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <AppAlerts />
-        <App />
-      </BrowserRouter>
+      <AppAlerts />
+      <RouterProvider router={routes} />
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 {{< /highlight >}}
 

@@ -168,28 +168,25 @@ export default Toast;
 We'll tuck the container in beside the `AppAlerts` container in the startup component:
 
 file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/index.tsx" title="/src/index.tsx" >}}*
-{{< highlight typescript "hl_lines=7 17" >}}
-import React from 'react';
+{{< highlight typescript "hl_lines=6 15" >}}
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import 'bootstrap';
 import AppAlerts from './components/app/AppAlerts';
 import AppToasts from './components/app/AppToasts';
 import './styles/global.scss';
-import App from './App';
 import store from './store';
+import routes from './routes';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <AppAlerts />
-        <AppToasts />
-        <App />
-      </BrowserRouter>
+      <AppAlerts />
+      <AppToasts />
+      <RouterProvider router={routes} />
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 {{< /highlight >}}
 
