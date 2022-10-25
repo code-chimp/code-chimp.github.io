@@ -29,7 +29,9 @@ For this first pass I am just looking to display some text, and of course we wil
 state cleanup. I chose to name the interface **IToast*Message*** over simply **IToast** as I have previously run into a
 naming collision with another package, so in this instance I chose to be ultra-specific.
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@interfaces/IToastMessage.ts" title="/src/@interfaces/IToastMessage.ts" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@interfaces/IToastMessage.ts"
+           title="/src/@interfaces/IToastMessage.ts" >}}*
 {{< highlight typescript >}}
 interface IToastMessage {
   id: string;
@@ -43,7 +45,9 @@ export default IToastMessage;
 
 We only need actions to display it, and remove it for now:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/toasts.ts" title="/src/store/slices/toasts.ts" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/toasts.ts"
+           title="/src/store/slices/toasts.ts" >}}*
 {{< highlight typescript >}}
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuid } from 'uuid';
@@ -85,7 +89,9 @@ export default toasts.reducer;
 The container is really simple since [Bootstrap's live example][bsl] demonstrated a nice set of default classes
 to wrap a stack of toasts:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppToasts/AppToasts.tsx" title="/src/components/app/AppToasts/AppToasts.tsx" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppToasts/AppToasts.tsx"
+           title="/src/components/app/AppToasts/AppToasts.tsx" >}}*
 {{< highlight typescript >}}
 import React, { FC } from 'react';
 import { useAppSelector } from '../../../helpers';
@@ -112,7 +118,9 @@ export default AppToasts;
 Here we come to the primary difference between Bootstrap's toasts and their alerts - toasts are exclusively **opt-in**
 so you need to explicitly invoke the `show` method for the component. Again just the bare minimum for the toast itself:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppToasts/Toast/Toast.tsx" title="/src/components/app/AppToasts/Toast/Toast.tsx" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppToasts/Toast/Toast.tsx"
+           title="/src/components/app/AppToasts/Toast/Toast.tsx" >}}*
 {{< highlight typescript "hl_lines=2 23-26" >}}
 import React, { FC, useEffect, useRef } from 'react';
 import { Toast as BSToast } from 'bootstrap';
@@ -167,7 +175,9 @@ export default Toast;
 
 We'll tuck the container in beside the `AppAlerts` container in the startup component:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/index.tsx" title="/src/index.tsx" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/index.tsx"
+           title="/src/index.tsx" >}}*
 {{< highlight typescript "hl_lines=6 15" >}}
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
@@ -194,7 +204,9 @@ createRoot(document.getElementById('root') as HTMLElement).render(
 
 Let's add a new button to our notifications test page so that we can verify everything works:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/index.tsx" title="/src/index.tsx" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/index.tsx"
+           title="/src/index.tsx" >}}*
 {{< highlight typescript "hl_lines=29-30 33 58-70" >}}
 /* istanbul ignore file */
 /* This is just an homely little demo page and is meant to be removed from a real project */
@@ -275,13 +287,21 @@ export default NotificationsDemo;
 ### Test Drive
 
 After verifying that I have no linting errors it's time to start the app and push our shiny new button.
-{{< figure src="first_toast.png" alt="showing a toast rendered on screen next to the redux state tree" caption="looks very MVP" >}}
+{{< figure
+    src="first_toast.png"
+    alt="showing a toast rendered on screen next to the redux state tree"
+    caption="looks very MVP"
+    default="true" >}}
 
 After a few seconds the `removeToastMessage` was dispatched automatically by the listener and we can see that the message
 has now been removed from the screen:
-{{< figure src="first_toast_cleanup.png" alt="displaying no toast on the screen next to the redux dev tools showing the actions processed" caption="current store" >}}
+{{< figure
+    src="first_toast_cleanup.png"
+    alt="displaying no toast on the screen next to the redux dev tools showing the actions processed"
+    caption="current store"
+    default="true" >}}
 
-{{< figure src="yes.gif" alt="Kip Dynamite 'yes'" caption="victory" >}}
+{{< figure src="yes.gif" alt="Kip Dynamite 'yes'" caption="victory" default="true" >}}
 
 ## Adding Polish
 
@@ -293,7 +313,8 @@ header text non-configurable unless a client requests it.
 Even though I am using identical values to `AlertTypes`, this component has the greatest likelihood to sprout more variants
 as time goes on, so I feel it best to give the ToastMessage its own separate typing:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@enums/ToastTypes" title="/src/@enums/ToastTypes" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@enums/ToastTypes" title="/src/@enums/ToastTypes" >}}*
 {{< highlight typescript >}}
 enum ToastTypes {
   Error = 'danger',
@@ -305,7 +326,9 @@ enum ToastTypes {
 export default ToastTypes;
 {{< /highlight >}}
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@types/ToastType" title="/src/@types/ToastType" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@types/ToastType"
+           title="/src/@types/ToastType" >}}*
 {{< highlight typescript >}}
 import ToastTypes from '../@enums/ToastTypes';
 
@@ -319,7 +342,9 @@ export default ToastType;
 
 Adding the new type to the interface:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@interfaces/IToastMessage.ts" title="/src/@interfaces/IToastMessage.ts" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@interfaces/IToastMessage.ts"
+           title="/src/@interfaces/IToastMessage.ts" >}}*
 {{< highlight typescript "hl_lines=5" >}}
 import ToastType from '../@types/ToastType';
 
@@ -336,7 +361,9 @@ export default IToastMessage;
 
 Add actions for our typed toast messages and create a helper method for preparing the payload:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/toasts.ts" title="/src/store/slices/toasts.ts" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/toasts.ts"
+           title="/src/store/slices/toasts.ts" >}}*
 {{< highlight typescript "hl_lines=4 9-14 26-57 61-67" >}}
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuid } from 'uuid';
@@ -415,7 +442,9 @@ export default toasts.reducer;
 
 Adding icons and appropriate tinting to the toast header really makes it "pop":
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppToasts/Toast/Toast.tsx" title="/src/components/app/AppToasts/Toast/Toast.tsx" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppToasts/Toast/Toast.tsx"
+           title="/src/components/app/AppToasts/Toast/Toast.tsx" >}}*
 {{< highlight typescript "hl_lines=3-11 23-27 46-69 79-87" >}}
 import React, { FC, useEffect, useRef } from 'react';
 import { Toast as BSToast } from 'bootstrap';
@@ -525,7 +554,9 @@ export default Toast;
 
 Add some new buttons for the new toast actions:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/pages/NotificationsDemo/NotificationsDemo.tsx" title="/src/pages/NotificationsDemo/NotificationsDemo.tsx" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/pages/NotificationsDemo/NotificationsDemo.tsx"
+           title="/src/pages/NotificationsDemo/NotificationsDemo.tsx" >}}*
 {{< highlight typescript "hl_lines=11-16 35-43 78-92" >}}
 /* istanbul ignore file */
 /* This is just an homely little demo page and is meant to be removed from a real project */
@@ -631,7 +662,11 @@ export default NotificationsDemo;
 ### Final Test
 
 The page may be ugly, but the toasts look good!
-{{< figure src="final_toasts.png" alt="displaying four toast messages on the screen with appropriate icons and coloring" caption="Yeah, Toast!" >}}
+{{< figure
+    src="final_toasts.png"
+    alt="displaying four toast messages on the screen with appropriate icons and coloring"
+    caption="Yeah, Toast!"
+    default="true" >}}
 
 
 ## Conclusion

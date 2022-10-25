@@ -29,14 +29,18 @@ one or more of the issues, and their subsequent solutions, I ran into during the
 
 [Bootstrap][bs] was added to the project via a global stylesheet:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/styles/global.scss" title="/src/styles/global.scss" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/styles/global.scss"
+           title="/src/styles/global.scss" >}}*
 {{< highlight scss >}}
 @import '~bootstrap/scss/bootstrap';
 {{< /highlight >}}
 
 and then included along with their JavaScript plugin in the project's startup file:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/index.tsx" title="/src/index.tsx" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/index.tsx"
+           title="/src/index.tsx" >}}*
 {{< highlight typescript "hl_lines=5 6" >}}
 import React from 'react';
 import { createRoot } from 'react-dom/client';
@@ -58,7 +62,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
 
 As we can see from their [documentation][bsax] there are several different styles of alert available from their framework
 that are powered by the addition of a custom class such as `alert-success` or `alert-info`.
-{{< figure src="alert_examples.png" alt="Bootstrap alert examples" >}}
+{{< figure src="alert_examples.png" alt="Bootstrap alert examples" default="true" >}}
 
 ### Typing
 
@@ -66,7 +70,9 @@ For this exercise I am only concerned with a specific subset of these, so I crea
 that allows me to utilize their string-based names in a more type safe manner. This has an additional benefit of protecting
 me from any inevitable typos (i.e. `btn-sucess` `btn-daanger` etc.).
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@enums/AlertTypes.ts" title="/src/@enums/AlertTypes.ts" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@enums/AlertTypes.ts"
+           title="/src/@enums/AlertTypes.ts" >}}*
 {{< highlight typescript >}}
 enum AlertTypes {
   Error = 'danger',
@@ -78,7 +84,9 @@ enum AlertTypes {
 export default AlertTypes;
 {{< /highlight >}}
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@types/AlertType.ts" title="/src/@types/AlertType.ts" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@types/AlertType.ts"
+           title="/src/@types/AlertType.ts" >}}*
 {{< highlight typescript >}}
 import AlertTypes from '../@enums/AlertTypes';
 
@@ -94,7 +102,9 @@ Before we can begin to flesh out a slice for our alerts we need to decide the sh
 placing in the store. [The Bootstrap documentation][bsad] shows some good examples of the kind of content you can put
 inside of a Bootstrap Alert, so for this first pass I am just going with the alert _text_, _type_, and an optional _title_:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@interfaces/IAlert.ts" title="/src/@interfaces/IAlert.ts" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@interfaces/IAlert.ts"
+           title="/src/@interfaces/IAlert.ts" >}}*
 {{< highlight typescript >}}
 import AlertType from '../@types/AlertType';
 
@@ -115,7 +125,9 @@ believe a more accurate action name should be `dispatch(addErrorAlert(...` as op
 `dispatch(errorAlert(...` to better reflect how we are actually changing the store. Let's start off with just two
 actions in order to assess the validity of this approach. This felt like a good first pass:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/alerts.ts" title="/src/store/slices/alerts.ts" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/alerts.ts"
+           title="/src/store/slices/alerts.ts" >}}*
 {{< highlight typescript >}}
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import IAlert from '../../@interfaces/IAlert';
@@ -151,7 +163,9 @@ export default alerts.reducer;
 
 Now we just need a functional container component to watch our store for new alerts:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppAlerts/AppAlerts.tsx" title="/src/components/app/AppAlerts/AppAlerts.tsx" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppAlerts/AppAlerts.tsx"
+           title="/src/components/app/AppAlerts/AppAlerts.tsx" >}}*
 {{< highlight typescript >}}
 import React, { FC } from 'react';
 import { useAppSelector } from '../../../helpers';
@@ -178,7 +192,9 @@ const AppAlerts: FC = () => {
 export default AppAlerts;
 {{< /highlight >}}
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppAlerts/Alert/Alert.tsx" title="/src/components/app/AppAlerts/Alert/Alert.tsx" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppAlerts/Alert/Alert.tsx"
+           title="/src/components/app/AppAlerts/Alert/Alert.tsx" >}}*
 {{< highlight typescript >}}
 import React, { FC } from 'react';
 import IAlert from '../../../../@interfaces/IAlert';
@@ -210,7 +226,9 @@ export default Alert;
 
 Since we want this to be available from anywhere in the application I am going to put it next to our main RouteProvider.
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/index.tsx" title="/src/index.tsx" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/index.tsx"
+           title="/src/index.tsx" >}}*
 {{< highlight typescript "hl_lines=13" >}}
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
@@ -235,7 +253,9 @@ createRoot(document.getElementById('root') as HTMLElement).render(
 
 And now an ugly little screen to test our logic:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/pages/NotificationsDemo/NotificationsDemo.tsx" title="/src/pages/NotificationsDemo/NotificationsDemo.tsx" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/pages/NotificationsDemo/NotificationsDemo.tsx"
+           title="/src/pages/NotificationsDemo/NotificationsDemo.tsx" >}}*
 {{< highlight typescript >}}
 import React from 'react';
 import { useAppDispatch } from '../../helpers';
@@ -270,7 +290,11 @@ export default NotificationsDemo;
 
 #### ...and, our first error
 
-{{< figure src="first_error.png" alt="linting error on the dispatched action's argument type" caption="my first error (today)" >}}
+{{< figure
+    src="first_error.png"
+    alt="linting error on the dispatched action's argument type"
+    caption="my first error (today)"
+    default="true" >}}
 The excellent TypeScript linter has alerted me to a problem. The way that I have designed the actions they require the entire `IAlert`
 interface including the type. I was really hoping to abstract that implementation detail away from the developer so let's
 see what can be done about that.
@@ -280,7 +304,9 @@ you to do additional processing to the incoming action's payload before passing 
 configure the action `prepare` method to accept a partial `IAlert` which we then fill in the missing `AlertType`
 field before passing the now complete `IAlert` to the reducer.
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/alerts.ts" title="/src/store/slices/alerts.ts" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/alerts.ts"
+           title="/src/store/slices/alerts.ts" >}}*
 {{< highlight typescript "hl_lines=16-18 24-26" >}}
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import IAlert from '../../@interfaces/IAlert';
@@ -322,22 +348,40 @@ export default alerts.reducer;
 ### First Test Drive
 
 ESLint is happy and we can now fire up the app and see what damage we have done.
-{{< figure src="first_alerts.png" alt="showing two alerts on the screen" caption="hooray!" >}}
+{{< figure
+     src="first_alerts.png"
+     alt="showing two alerts on the screen"
+     caption="hooray!"
+     default="true" >}}
 
 Looks like the components are accurately reflecting the current store:
-{{< figure src="first_alerts_state.png" alt="showing two alerts on the screen next to the redux dev tools showing the current state tree" caption="current store" >}}
+{{< figure
+     src="first_alerts_state.png"
+     alt="showing two alerts on the screen next to the redux dev tools showing the current state tree"
+     caption="current store"
+     default="true" >}}
 
 Most of us have experienced the feeling, right?
-{{< figure src="smartest_dev_alive.png" alt="dumb meme joking that I am a bronze medalist who thinks they got the gold" caption="Hecks YEAH!!1!" >}}
+{{< figure
+     src="smartest_dev_alive.png"
+     alt="dumb meme joking that I am a bronze medalist who thinks they got the gold" caption="Hecks YEAH!!1!" >}}
 
 #### ...oh, a second design flaw
 
 Let's click the close buttons to get rid of these before we take a victory lap - but what's this? The state still contains our alerts that we closed.
-{{< figure src="second_error.png" alt="no alerts on screen, but still in the state tree" caption="why are they still there?" >}}
+{{< figure
+    src="second_error.png"
+    alt="no alerts on screen, but still in the state tree"
+    caption="why are they still there?"
+    default="true" >}}
 
 The really bad thing is that the alerts functionality still works and will add new alerts and not display the old ones,
 but that still leaves state that is no longer relevant in our store. Of course this is not optimal so we need to fix it.
-{{< figure src="pollution.png" alt="bloated state tree with stale information" caption="bloated with stale information" >}}
+{{< figure
+    src="pollution.png"
+    alt="bloated state tree with stale information"
+    caption="bloated with stale information"
+    default="true" >}}
 
 ### Removing Stale Messages
 
@@ -355,7 +399,9 @@ npm i -D @types/uuid
 
 Add an `id` property to our alert interface:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@interfaces/IAlert.ts" title="/src/@interfaces/IAlert.ts" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/@interfaces/IAlert.ts"
+           title="/src/@interfaces/IAlert.ts" >}}*
 {{< highlight typescript "hl_lines=4" >}}
 import AlertType from '../@types/AlertType';
 
@@ -372,7 +418,9 @@ export default IAlert;
 We will generate the id and add it to the alert in the action's `prepare` callback. Since this is starting to add some
 repetitive logic let us go ahead and pull the payload preparation logic out to a helper method.
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/alerts.ts" title="/src/store/slices/alerts.ts" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/alerts.ts"
+           title="/src/store/slices/alerts.ts" >}}*
 {{< highlight typescript "hl_lines=2 10-16 27 35" >}}
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuid } from 'uuid';
@@ -423,7 +471,9 @@ export default alerts.reducer;
 
 Back in the slice let's add an action to remove a specified alert from the array.
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/alerts.ts" title="/src/store/slices/alerts.ts" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/alerts.ts"
+           title="/src/store/slices/alerts.ts" >}}*
 {{< highlight typescript "hl_lines=22-27 48" >}}
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuid } from 'uuid';
@@ -482,7 +532,9 @@ export default alerts.reducer;
 
 Now we can fix that greasy key in the alerts container:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppAlerts/AppAlerts.tsx" title="/src/components/app/AppAlerts/AppAlerts.tsx" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppAlerts/AppAlerts.tsx"
+           title="/src/components/app/AppAlerts/AppAlerts.tsx" >}}*
 {{< highlight typescript  "hl_lines=15" >}}
 import React, { FC } from 'react';
 import { useAppSelector } from '../../../helpers';
@@ -519,7 +571,9 @@ throwing DOMNode errors. To attach our listener to this exact alert instance we 
 created which we can obtain from the [useRef][ref] hook. We can be certain that the `ref.current` is populated with the
 desired DOM reference by wrapping it inside a single-fire **useEffect**.
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppAlerts/Alert/Alert.tsx" title="/src/components/app/AppAlerts/Alert/Alert.tsx" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppAlerts/Alert/Alert.tsx"
+           title="/src/components/app/AppAlerts/Alert/Alert.tsx" >}}*
 {{< highlight typescript  "hl_lines=1 3 4 11 12 14-30 34" >}}
 import React, { FC, useEffect, useRef } from 'react';
 import IAlert from '../../../../@interfaces/IAlert';
@@ -577,17 +631,27 @@ export default Alert;
 
 This should be all of the moving pieces required to keep our state tidy. Clicking both buttons so we have a duplicate
 scenario to the first time through:
-{{< figure src="second_alerts.png" alt="showing two alerts on the screen next to state tree" caption="same setup" >}}
+{{< figure
+    src="second_alerts.png"
+    alt="showing two alerts on the screen next to state tree"
+    caption="same setup"
+    default="true" >}}
 
 Let's close the first info alert and check the state:
-{{< figure src="second_alerts_success.png" alt="showing one alert on the screen next to now modified state tree" caption="it is gone!" >}}
+{{< figure
+    src="second_alerts_success.png"
+    alt="showing one alert on the screen next to now modified state tree"
+    caption="it is gone!"
+    default="true" >}}
 
 ### Finishing Touches
 
 Now that we know everything works as intended we can implement the remaining actions missing from the alerts slice and
 call it day:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/alerts.ts" title="/src/store/slices/alerts.ts" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/store/slices/alerts.ts"
+           title="/src/store/slices/alerts.ts" >}}*
 {{< highlight typescript "hl_lines=28-35 52-59 63" >}}
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuid } from 'uuid';
@@ -662,12 +726,18 @@ export default alerts.reducer;
 
 ## Bonus Round
 
-{{< figure src="brians_flair.gif" alt="brian from office space showing his flair" caption="It's FLAIR TIME!" >}}
+{{< figure
+    src="brians_flair.gif"
+    alt="brian from office space showing his flair"
+    caption="It's FLAIR TIME!"
+    default="true" >}}
 
 While our alerts look nice why don't we go the extra few feet and add some [FontAwesome][fa] icons for a little flair.
 Here I am just taking what was shown [in the docs][icon] and swapping in [FontAwesome][fa]'s icons:
 
-file: *{{< newtabref href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppAlerts/Alert/Alert.tsx" title="/src/components/app/AppAlerts/Alert/Alert.tsx" >}}*
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/src/components/app/AppAlerts/Alert/Alert.tsx"
+           title="/src/components/app/AppAlerts/Alert/Alert.tsx" >}}*
 {{< highlight typescript  "hl_lines=2-10 14 38-55 63" >}}
 import React, { FC, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -749,7 +819,11 @@ export default Alert;
 {{< /highlight >}}
 
 I feel the icon adds a little extra polish for some miniscule extra effort:
-{{< figure src="final_alerts.png" alt="showing four variations of alert message with an svg icon based on alert type" caption="final result" >}}
+{{< figure
+    src="final_alerts.png"
+    alt="showing four variations of alert message with an svg icon based on alert type"
+    caption="final result"
+    default="true" >}}
 
 ## Conclusion
 

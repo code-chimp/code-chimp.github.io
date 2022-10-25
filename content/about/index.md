@@ -7,7 +7,7 @@ showEdit: false
 draft: false
 ---
 
-{{< figure src="my_desk.jpg" alt="my office" >}}
+{{< figure src="my_desk.jpg" alt="my office" default="true" >}}
 
 ## What I do
 
@@ -22,7 +22,11 @@ analysis tools like [ESLint][esl] and [Prettier][pret] paired with an extensive 
 
 ## How I got here
 
-{{< figure src="my_bookshelf.jpg" alt="my bookshelf" caption="the books in the middle opened a new world for me" >}}
+{{< figure
+    src="my_bookshelf.jpg"
+    alt="my bookshelf"
+    caption="the books in the middle opened a new world for me"
+    default="true" >}}
 
 I was bitten by the programming bug after seeing the Disney movie [Tron][tron] as a young teenager - afterwards
 ceaselessly bugging my parents until they gave in and purchased a top-of-the line Apple //c for me.
