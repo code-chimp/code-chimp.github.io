@@ -189,6 +189,20 @@ npx typesync
 yarn
 ```
 
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vanilla-redux-template/blob/main/.env"
+           title=".env" >}}* **(old app)**
+```text
+REACT_APP_API_URI=https://jsonplaceholder.typicode.com
+```
+
+file: *{{< newtabref
+           href="https://github.com/code-chimp/vite-redux-seed/blob/main/.env"
+           title=".env" >}}*
+```text
+VITE_API_URI=https://jsonplaceholder.typicode.com
+```
+
 2. .env changes
 3. stupid `RequestInit`
 4. bootstrap config
