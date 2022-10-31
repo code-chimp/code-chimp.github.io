@@ -3,7 +3,7 @@ title: "Porting a Create React App application to Vite Pt. 1: Base Project"
 description: Porting a Create React App application to Vite part one - base project
 summary: As of this writing, Vite promises a faster and more performant developer experience over the tried-and-true Create React App template. This is my experience porting one of my vanilla projects to Vite.
 date: 2022-10-31T00:01:01-05:00
-draft: true
+draft: false
 
 categories:
 - Project Architecture
