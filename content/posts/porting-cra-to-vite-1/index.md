@@ -166,7 +166,7 @@ our defined format, and that any linting issues will cause an error:
 file: *{{< newtabref
            href="https://github.com/code-chimp/vite-redux-seed/blob/stage-1.5/package.json"
            title="package.json" >}}*
-{{< highlight json "hl_lines=4 7" >}}
+{{< highlight json "hl_lines=5 7" >}}
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -559,4 +559,4 @@ advice on something you think I could be doing better.
 [dotcra]: https://create-react-app.dev/docs/adding-custom-environment-variables/#adding-development-environment-variables-in-env 'Craete React App: Adding Development Environment Variables'
 [dotvit]: https://vitejs.dev/guide/env-and-mode.html#env-variables 'Vite: Env Variables and Modes'
 [dotsens]: https://vitejs.dev/guide/env-and-mode.html#intellisense-for-typescript 'Typing .env variables'
-[tpack]: https://turbo.build/ 'an incremental bundler and build system optimized for JavaScript and TypeScript, written in Rust'
+[tpack]: https://turbo.build/pack 'an incremental bundler and build system optimized for JavaScript and TypeScript, written in Rust'
