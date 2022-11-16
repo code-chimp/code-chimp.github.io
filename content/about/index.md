@@ -11,13 +11,13 @@ draft: false
 
 ## What I do
 
-I have been shipping code for well over two decades now, and I still really love my work.  Currently I am working as a
-front-end heavy full-stack developer - being a huge fan of the [React][react] framework and having decades worth of
-experience with the [.NET ecosystem][dn]. I have entirely embraced [TypeScript][ts] for anything I would normally have
-written in JavaScript - such as a React front-end, [NodeJS][nodejs] middle tier code, or even [personal experiments][rnx]
-with [React Native][rn]. Lately I have been focusing on automating my code quality through the use of good static
-analysis tools like [ESLint][esl] and [Prettier][pret] paired with an extensive test suite - usually leveraging
-[Kent C. Dodd's][kcd] excellent [Testing Library][testl] to enhance the [Jest][jest] testing framework
+I have been shipping code for well over two decades now, and I still really love my work.  I am a huge fan of the
+[React][react] framework and have decades worth of experience with the [.NET ecosystem][dn] which is why I tend to
+gravitate towards front-end heavy full stack roles. I have entirely embraced [TypeScript][ts] for anything I would
+normally have written in JavaScript - such as a React front-end, [NodeJS][nodejs] middle tier code, or even
+[personal experiments][rnx] with [React Native][rn]. Lately I have been focusing on automating my code quality through
+the use of good static analysis tools like [ESLint][esl] and [Prettier][pret] paired with an extensive test suite -
+usually leveraging [Kent C. Dodd's][kcd] excellent [Testing Library][testl] to enhance the [Jest][jest] testing framework
 [(example)][mycrypto].
 
 ## How I got here

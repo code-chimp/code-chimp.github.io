@@ -21,10 +21,17 @@ draft: false
   </thead>
   <tbody>
     <tr>
+      <td><img class="customLogo medium-zoom-image" alt="Kiewit Corporation" src="kiewit_logo.png" /></td>
+      <td><a href="https://www.kiewit.com">Kiewit Corporation</a></td>
+      <td>Lead Software Engineer</td>
+      <td>12/2022 - Present</td>
+      <td>Omaha, NE<br />USA</td>
+    </tr>
+    <tr>
       <td><img class="customLogo medium-zoom-image" alt="Q2 Helix" src="helix2_logo.png" /></td>
       <td><a href="https://helix.q2.com">Helix by Q2</a></td>
       <td>Staff Software Engineer</td>
-      <td>06/2021 - Present</td>
+      <td>06/2021 - 11/2022</td>
       <td>Remote<br/> Austin, TX<br />USA</td>
     </tr>
     <tr>
