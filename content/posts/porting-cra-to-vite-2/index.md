@@ -569,6 +569,16 @@ annoyance more than any kind of hindrance.
 Unless Create React App is a hard requirement I will likely give Vite a chance with the next project I get to spin up
 from scratch. Thank you for stopping by, I hope you found something useful here.
 
+## Update 2022-11-28
+
+As of [WebStorm 2022.3][ws2022_3] Vite and Vitest are now fully integrated into the IDE as first class citizens - no more third party
+plugins needed:
+
+{{< figure
+    src="webstorm_vitest.png"
+    alt="displaying WebStorm's test runner running Vitest tests"
+    caption="WebStorm's test runner! Yay!"
+    default="true" >}}
 
 [vtst]: https://vitest.dev/ 'Vite-native unit test framework'
 [tstl]: https://testing-library.com/ 'Simple and complete testing utilities that encourage good testing practices'
@@ -578,4 +588,5 @@ from scratch. Thank you for stopping by, I hope you found something useful here.
 [int]: https://vitest.dev/guide/ide.html#intellij-webstorm-community 'Vitest recommended integration'
 [run]: https://plugins.jetbrains.com/plugin/19220-vitest-runner 'Vitest Runner'
 [van]: https://github.com/code-chimp/vanilla-redux-template 'My base template for new Redux projects'
+[ws2022_3]: https://www.jetbrains.com/webstorm/whatsnew/2022-3/ 'What’s new in WebStorm 2022.3'
 
