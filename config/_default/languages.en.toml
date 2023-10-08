@@ -1,15 +1,15 @@
 languageCode = "en"
 languageName = "English"
-displayName = "EN"
-isoCode = "en"
 weight = 1
-rtl = false
-
 title = "Code-Chimp"
-# logo = "img/logo.png"
-description = "Sharing things I find interesting or come up with"
 
-dateFormat = "2 January 2006"
+[params]
+  description = "Sharing things I find interesting or come up with"
+  # logo = "img/logo.png"
+  dateFormat = "2 January 2006"
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
 
 [author]
   name = "Tim Goshinski"
