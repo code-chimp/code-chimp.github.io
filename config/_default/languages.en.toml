@@ -1,3 +1,4 @@
+disabled = false
 languageCode = "en"
 languageName = "English"
 weight = 1
@@ -5,15 +6,18 @@ title = "Code-Chimp"
 
 [params]
   description = "Sharing things I find interesting or come up with"
-  # logo = "img/logo.png"
   dateFormat = "2 January 2006"
   displayName = "EN"
   isoCode = "en"
   rtl = false
+  logo = "img/avatar-0-alpha.png"
+  #secondaryLogo = "img/avatar-0-alpha.png"
 
-[author]
+[params.author]
   name = "Tim Goshinski"
-  image = "img/avatar-9.png"
+  email = "tim@code-chimp.com"
+  image = "img/avatar-3.png"
+  imageQuality = 96
   headline = "Code flinging cyber-primate"
   bio = "I code and I know (some) things"
   links = [
@@ -57,6 +61,7 @@ title = "Code-Chimp"
   #   { tumblr = "https://username.tumblr.com" },
   #   { twitch = "https://twitch.tv/username" },
   #   { twitter = "https://twitter.com/username" },
+  #   { x-twitter = "https://twitter.com/username" },
   #   { whatsapp = "https://wa.me/phone-number" },
   #   { youtube = "https://youtube.com/username" },
   ]

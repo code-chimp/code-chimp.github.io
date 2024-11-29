@@ -43,7 +43,7 @@ front-end development have only grown more refined since then.
 
 ## Where I am
 
-I live in Omaha, NE with my wife, daughter and three very random rescue dogs. Even though I am not wild about winters
+I live in Omaha, NE with my wife, daughter, two random rescue dogs, and four mildly psychotic cockatiels. Even though I am not wild about winters
 here in the Midwest, I cannot seem to talk my wife into moving anywhere else so I am stuck here for the time being. In
 my spare time I like experimenting with different programming languages and frameworks. When my family manages to get me
 out of the house I enjoy walking our local [botanical gardens][laur], [world class zoo][hdz], or one of [our many][dur] -
